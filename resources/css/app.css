@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════
+   BASE LAYER — Precision Tech Editorial
+   ═══════════════════════════════════════════ */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply bg-surface text-on-surface font-sans;
+    }
+
+    ::selection {
+        background: rgba(0, 106, 98, 0.15);
+        color: #006A62;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   COMPONENT LAYER — Reusable Patterns
+   ═══════════════════════════════════════════ */
+@layer components {
+    /* ── Glassmorphism ────────────────────── */
+    .glass {
+        background: rgba(248, 250, 247, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .glass-dark {
+        background: rgba(25, 28, 27, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* ── Buttons — "Precision Tools" ─────── */
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white rounded-md transition-all duration-300;
+        background: linear-gradient(135deg, #006A62, #40E0D0);
+        box-shadow: 0 4px 16px rgba(0, 106, 98, 0.25);
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 8px 28px rgba(0, 106, 98, 0.35);
+        transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+        transform: translateY(0px);
+        box-shadow: 0 2px 8px rgba(0, 106, 98, 0.2);
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold rounded-md transition-all duration-300;
+        @apply bg-primary-container text-on-primary-container;
+    }
+
+    .btn-secondary:hover {
+        @apply bg-primary-fixed-dim;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold rounded-md transition-all duration-300;
+        border: 1.5px solid rgba(186, 202, 198, 0.2);
+        @apply text-on-surface;
+    }
+
+    .btn-ghost:hover {
+        border-color: rgba(186, 202, 198, 0.5);
+        @apply bg-surface-container-low;
+    }
+
+    .btn-white {
+        @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold rounded-md transition-all duration-300;
+        @apply bg-white text-primary;
+    }
+
+    .btn-white:hover {
+        @apply bg-surface-container-lowest;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-outline-white {
+        @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold rounded-md transition-all duration-300;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        @apply text-white;
+    }
+
+    .btn-outline-white:hover {
+        border-color: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ── Cards — Tonal Lift ──────────────── */
+    .card-tonal {
+        @apply bg-surface-container-lowest rounded-lg p-6 transition-all duration-300;
+    }
+
+    .card-tonal:hover {
+        @apply bg-surface-container-low;
+    }
+
+    /* ── Ghost Border ────────────────────── */
+    .ghost-border {
+        box-shadow: inset 0 0 0 1px rgba(186, 202, 198, 0.15);
+    }
+
+    /* ── Ambient Shadow ──────────────────── */
+    .ambient-shadow {
+        box-shadow: 0 20px 40px rgba(25, 28, 27, 0.06);
+    }
+
+    /* ── Icon Glow ───────────────────────── */
+    .icon-glow {
+        @apply inline-flex items-center justify-center w-12 h-12 rounded-md;
+        background: rgba(58, 220, 204, 0.15);
+    }
+
+    /* ── Chip/Badge ───────────────────────── */
+    .chip {
+        @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-md font-medium;
+    }
+
+    .chip-primary {
+        @apply chip bg-primary-container text-on-primary-container;
+    }
+
+    .chip-tertiary {
+        @apply chip bg-tertiary-container text-on-tertiary-container;
+    }
+
+    /* ── Section ──────────────────────────── */
+    .section-padding {
+        @apply px-6 py-20 md:px-12 lg:px-20 xl:px-28;
+    }
+
+    /* ── Micro-copy (hardware etching) ───── */
+    .micro-label {
+        @apply text-label-sm uppercase tracking-widest text-on-surface-variant;
+    }
+
+    /* ── Nav link ─────────────────────────── */
+    .nav-link {
+        @apply relative text-sm font-medium text-on-surface-variant transition-colors duration-200;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        @apply text-on-surface;
+    }
+
+    .nav-link.active::after {
+        content: '';
+        @apply absolute -bottom-1 left-0 w-full h-0.5 rounded-full bg-primary;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY LAYER — Extra Helpers
+   ═══════════════════════════════════════════ */
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, #006A62, #40E0D0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #006A62 0%, #40E0D0 100%);
+    }
+
+    .bg-gradient-primary-subtle {
+        background: linear-gradient(135deg, #006A62 0%, #00897B 100%);
+    }
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS — Micro-interactions
+   ═══════════════════════════════════════════ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.7s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR CUSTOMIZATION
+   ═══════════════════════════════════════════ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F2F4F1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BACAC6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #006A62;
+}
+
+/* ═══════════════════════════════════════════
+   MASONRY GRID (Portfolio)
+   ═══════════════════════════════════════════ */
+.masonry-grid {
+    column-count: 1;
+    column-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .masonry-grid {
+        column-count: 3;
+    }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════
+   ADMIN LOGIN / UTILITY
+   ═══════════════════════════════════════════ */
+.liquid-gradient {
+    background: linear-gradient(135deg, #006a62 0%, #40e0d0 100%);
+}
