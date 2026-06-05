@@ -29,12 +29,9 @@
             <span class="material-symbols-outlined" data-icon="settings" {!! isset($activeAdminPage) && $activeAdminPage === 'settings' ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>settings</span>
             <span class="font-body text-sm font-medium">Settings</span>
         </a>
-        <form method="POST" action="/admin/logout" class="mx-2 mt-2">
-            @csrf
-            <button type="submit" class="w-full px-4 py-3 flex items-center gap-3 text-error font-medium rounded-lg hover:bg-error/5 transition-colors">
-                <span class="material-symbols-outlined" data-icon="logout">logout</span>
-                <span class="font-body text-sm font-medium">Logout</span>
-            </button>
-        </form>
+        <a href="/admin/logout" class="w-full px-4 py-3 flex items-center gap-3 text-error font-medium rounded-lg hover:bg-error/5 transition-colors">
+            <span class="material-symbols-outlined" data-icon="logout">logout</span>
+            <span class="font-body text-sm font-medium">Logout</span>
+        </a>
     </div>
 </aside>

@@ -58,7 +58,7 @@ Route::prefix('admin')->middleware('guest')->group(function () {
     Route::post('/login', [AdminAuthController::class, 'login']);
 });
 
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout')->middleware('auth');
+Route::match(['get', 'post'], '/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout')->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
