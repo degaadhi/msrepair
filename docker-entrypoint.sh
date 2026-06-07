@@ -10,7 +10,7 @@ php artisan route:cache
 php artisan view:cache
 
 echo ">>> Creating storage link..."
-php artisan storage:link || true
+php artisan storage:link --force || true
 
 # Railway sets a dynamic PORT environment variable
 # Apache must listen on this port instead of the default 80

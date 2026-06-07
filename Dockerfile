@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Enable Apache mod_rewrite and ensure only prefork MPM is active
+RUN a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork rewrite
 
 # Set Apache document root to Laravel's /public
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
@@ -64,7 +65,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
 # Create storage symlink
-RUN php artisan storage:link || true
+RUN php artisan storage:link --force || true
 
 # Clear any cached config (will be re-cached at runtime with env vars)
 RUN php artisan config:clear \
