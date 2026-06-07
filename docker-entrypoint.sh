@@ -29,6 +29,9 @@ rm -f /etc/apache2/mods-enabled/mpm_*.load
 rm -f /etc/apache2/mods-enabled/mpm_*.conf
 a2enmod mpm_prefork
 
+echo ">>> Fixing storage permissions..."
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
 echo ">>> Verifying Apache modules..."
 apachectl -M || true
 
