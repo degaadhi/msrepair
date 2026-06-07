@@ -24,5 +24,13 @@ if [ ! -z "$PORT" ]; then
     sed -i "s/:80/:$PORT/g" /etc/apache2/sites-available/000-default.conf
 fi
 
+echo ">>> Enforcing single Apache MPM (prefork)..."
+rm -f /etc/apache2/mods-enabled/mpm_*.load
+rm -f /etc/apache2/mods-enabled/mpm_*.conf
+a2enmod mpm_prefork
+
+echo ">>> Verifying Apache modules..."
+apachectl -M || true
+
 echo ">>> Starting Apache..."
 apache2-foreground
