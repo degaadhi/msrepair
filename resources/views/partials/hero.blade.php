@@ -21,7 +21,7 @@
                 </div>
 
                 {{-- Headline --}}
-                <h1 class="animate-fade-in-up animate-delay-100 font-display text-display-lg lg:text-[4rem] leading-[1.05] text-on-surface mb-6">
+                <h1 class="animate-fade-in-up animate-delay-100 font-display text-4xl sm:text-5xl lg:text-display-lg lg:text-[4rem] leading-[1.05] text-on-surface mb-6">
                     Spesialis Perbaikan
                     <span class="text-gradient italic">iPhone</span> di Semarang
                 </h1>
@@ -53,7 +53,7 @@
                         <img
                             src="{{ asset('images/hero-repair.png') }}"
                             alt="iPhone repair workspace"
-                            class="w-full h-[400px] lg:h-[520px] object-cover"
+                            class="w-full h-[250px] sm:h-[400px] lg:h-[520px] object-cover"
                         >
                     </div>
 

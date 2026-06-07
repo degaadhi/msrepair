@@ -7,7 +7,7 @@
             {{-- Left Column — Heading & Stats (2 cols) --}}
             <div class="lg:col-span-2">
                 <span class="micro-label mb-3 block">MENGAPA KAMI</span>
-                <h2 class="font-display text-display-sm lg:text-display-md text-on-surface mb-6">
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-display-md text-on-surface mb-6">
                     Mengapa Memilih MS Repair?
                 </h2>
                 <p class="text-on-surface-variant leading-relaxed mb-10">

@@ -17,7 +17,7 @@
         <div class="flex flex-col gap-2">
             <h6 class="text-white font-bold text-sm uppercase tracking-widest mb-2">Support</h6>
             <a href="#" class="text-primary-container/80 hover:text-white transition-all hover:underline font-body text-sm">Contact Root Admin</a>
-            <a href="https://wa.me/6281234567890" target="_blank" class="text-primary-container/80 hover:text-white transition-all hover:underline font-body text-sm">WhatsApp Urgent</a>
+            <a href="https://wa.me/{{ preg_replace('/^0/', '62', \App\Models\Setting::get('whatsapp', '085728160180')) }}" target="_blank" class="text-primary-container/80 hover:text-white transition-all hover:underline font-body text-sm">WhatsApp Urgent</a>
         </div>
     </div>
 </footer>

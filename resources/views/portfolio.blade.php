@@ -21,7 +21,7 @@
                 </span>
             </div>
             
-            <h1 class="animate-fade-in-up animate-delay-100 font-display text-display-lg lg:text-[4rem] leading-[1.05] text-on-surface mb-6">
+            <h1 class="animate-fade-in-up animate-delay-100 font-display text-4xl sm:text-5xl lg:text-display-lg lg:text-[4rem] leading-[1.05] text-on-surface mb-6">
                 Portfolio Hasil <br class="hidden md:block"/> 
                 <span class="text-gradient italic">Perbaikan</span>
             </h1>
@@ -47,7 +47,7 @@
                         <span class="material-symbols-outlined text-4xl text-on-surface-variant/30">image</span>
                     </div>
                     @endif
-                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                         <div>
                             <p class="text-primary-container font-display font-bold text-lg">{{ $portfolio->title }}</p>
                             <p class="text-white/80 text-sm font-medium">{{ Str::limit($portfolio->caption, 60) }}</p>
@@ -75,7 +75,7 @@
                         Konsultasikan kerusakan perangkat Anda sekarang secara gratis.
                     </p>
                 </div>
-                <a href="https://wa.me/6281234567890" target="_blank" class="btn-white z-10 flex-shrink-0 group">
+                <a href="https://wa.me/{{ preg_replace('/^0/', '62', \App\Models\Setting::get('whatsapp', '085728160180')) }}" target="_blank" class="btn-white z-10 flex-shrink-0 group">
                     Hubungi via WhatsApp
                     <svg class="w-4 h-4 text-primary transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

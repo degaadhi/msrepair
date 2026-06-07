@@ -6,12 +6,19 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\PriceList;
 use App\Models\Portfolio;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // Default Settings
+        Setting::firstOrCreate(['key' => 'shop_name'], ['value' => 'MS Repair']);
+        Setting::firstOrCreate(['key' => 'whatsapp'], ['value' => '085728160180']);
+        Setting::firstOrCreate(['key' => 'tagline'], ['value' => 'Mafia Service HP Semarang']);
+        Setting::firstOrCreate(['key' => 'address'], ['value' => 'VC3F+V48 Gedanganak, Semarang Regency, Central Java']);
+
         // Admin User
         User::firstOrCreate(
             ['email' => 'admin@msrepair.com'],

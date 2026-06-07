@@ -37,7 +37,7 @@
                     <li><a href="/pricelist" class="text-on-surface-variant text-sm hover:text-primary transition-colors font-medium">Price List</a></li>
                     <li><a href="/portfolio" class="text-on-surface-variant text-sm hover:text-primary transition-colors font-medium">Portfolio</a></li>
                     <li><a href="/contact" class="text-on-surface-variant text-sm hover:text-primary transition-colors font-medium">Contact</a></li>
-                    <li><a href="https://wa.me/6281234567890" target="_blank" class="text-on-surface-variant text-sm hover:text-primary transition-colors">WhatsApp</a></li>
+                    <li><a href="https://wa.me/{{ preg_replace('/^0/', '62', \App\Models\Setting::get('whatsapp', '085728160180')) }}" target="_blank" class="text-on-surface-variant text-sm hover:text-primary transition-colors">WhatsApp</a></li>
                 </ul>
             </div>
 
@@ -51,9 +51,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
                         </svg>
                         <div>
-                            VC3F+V48 Gedanganak,<br>
-                            Semarang Regency,<br>
-                            Central Java
+                            {{ \App\Models\Setting::get('address', 'VC3F+V48 Gedanganak, Semarang Regency, Central Java') }}
                         </div>
                     </li>
                     <li class="flex items-start gap-2 mt-4">

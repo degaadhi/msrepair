@@ -9,7 +9,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div class="animate-fade-in-up">
                 <span class="micro-label mb-4 block text-primary font-bold">GET IN TOUCH</span>
-                <h1 class="text-display-lg lg:text-[4.5rem] font-display font-extrabold text-on-surface leading-[1.05] tracking-tighter">
+                <h1 class="text-4xl sm:text-5xl lg:text-display-lg lg:text-[4.5rem] font-display font-extrabold text-on-surface leading-[1.05] tracking-tighter">
                     Precision Care for Your <span class="bg-primary/10 text-primary px-3 rounded-md">iPhone.</span>
                 </h1>
             </div>
@@ -26,7 +26,7 @@
         <!-- Contact Info Cards -->
         <div class="md:col-span-4 space-y-6">
             <!-- WhatsApp Primary CTA -->
-            <a class="block p-8 bg-[#25D366] text-white rounded-xl group transition-all duration-300 hover:shadow-ambient hover:-translate-y-1 animate-fade-in-up animate-delay-200" href="https://wa.me/6281234567890" target="_blank">
+            <a class="block p-8 bg-[#25D366] text-white rounded-xl group transition-all duration-300 hover:shadow-ambient hover:-translate-y-1 animate-fade-in-up animate-delay-200" href="https://wa.me/{{ preg_replace('/^0/', '62', \App\Models\Setting::get('whatsapp', '085728160180')) }}" target="_blank">
                 <div class="flex justify-between items-start mb-12">
                     <div class="bg-white/20 p-3 rounded-lg">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@
                 <div>
                     <span class="text-sm font-medium opacity-90 block mb-1">Direct Assistance</span>
                     <h3 class="text-2xl font-display font-bold">WhatsApp Support</h3>
-                    <p class="mt-2 text-white/80">+62 812-3456-7890</p>
+                    <p class="mt-2 text-white/80">{{ \App\Models\Setting::get('whatsapp', '085728160180') }}</p>
                 </div>
             </a>
 
@@ -73,7 +73,7 @@
                     </div>
                     <div>
                         <span class="micro-label block mb-2 font-bold text-[10px]">EMERGENCY HOTLINE</span>
-                        <p class="text-on-surface font-semibold text-sm">+62 812-3456-7890</p>
+                        <p class="text-on-surface font-semibold text-sm">{{ \App\Models\Setting::get('whatsapp', '085728160180') }}</p>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                         <div>
                             <h4 class="font-display font-bold text-2xl mb-2 text-on-surface">Our Headquarters</h4>
                             <p class="text-on-surface-variant text-sm max-w-sm leading-relaxed">
-                                VC3F+V48 Gedanganak, Semarang Regency, Central Java, Indonesia.
+                                {{ \App\Models\Setting::get('address', 'VC3F+V48 Gedanganak, Semarang Regency, Central Java') }}
                             </p>
                         </div>
                         <a href="https://maps.app.goo.gl/xxx" target="_blank" class="flex items-center gap-2 text-primary font-semibold hover:underline text-sm mt-1">

@@ -8,7 +8,7 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
             <div>
                 <span class="micro-label mb-3 block">LAYANAN KAMI</span>
-                <h2 class="font-display text-display-sm lg:text-display-md text-on-surface">
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-display-md text-on-surface">
                     Layanan Unggulan Kami
                 </h2>
                 <p class="mt-4 text-on-surface-variant max-w-xl leading-relaxed">
@@ -86,7 +86,7 @@
 
                 <div class="flex items-center justify-between">
                     <span class="text-on-surface-variant text-sm">
-                        <a href="https://wa.me/6281234567890" target="_blank" class="text-primary font-semibold hover:underline">Konsultasi Terlebih Dahulu</a>
+                        <a href="https://wa.me/{{ preg_replace('/^0/', '62', \App\Models\Setting::get('whatsapp', '085728160180')) }}" target="_blank" class="text-primary font-semibold hover:underline">Konsultasi Terlebih Dahulu</a>
                     </span>
                     <span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
