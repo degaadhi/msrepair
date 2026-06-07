@@ -1,0 +1,15 @@
+node_modules
+.git
+.env
+.env.backup
+.env.production
+vendor
+storage/logs/*
+.phpunit.cache
+.phpunit.result.cache
+.idea
+.vscode
+.fleet
+.nova
+.zed
+tests

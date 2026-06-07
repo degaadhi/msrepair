@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+echo ">>> Running database migrations..."
+php artisan migrate --force || echo "Migration failed or already up to date"
+
+echo ">>> Caching configuration..."
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+echo ">>> Creating storage link..."
+php artisan storage:link || true
+
+# Railway sets a dynamic PORT environment variable
+# Apache must listen on this port instead of the default 80
+if [ ! -z "$PORT" ]; then
+    echo ">>> Configuring Apache to listen on port $PORT..."
+    sed -i "s/Listen 80/Listen $PORT/g" /etc/apache2/ports.conf
+    sed -i "s/:80/:$PORT/g" /etc/apache2/sites-available/000-default.conf
+fi
+
+echo ">>> Starting Apache..."
+apache2-foreground
