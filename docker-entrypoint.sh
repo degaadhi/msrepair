@@ -3,6 +3,7 @@ set -e
 
 echo ">>> Running database migrations..."
 php artisan migrate --force || echo "Migration failed or already up to date"
+php artisan db:seed --force || echo "Seeding failed or already up to date"
 
 echo ">>> Caching configuration..."
 php artisan config:cache

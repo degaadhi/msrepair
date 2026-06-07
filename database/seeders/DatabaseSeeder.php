@@ -13,14 +13,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Admin User
-        User::create([
-            'name' => 'Admin MS Repair',
-            'email' => 'admin@msrepair.com',
-            'password' => Hash::make('msrepair2024'),
-        ]);
+        User::firstOrCreate(
+            ['email' => 'admin@msrepair.com'],
+            [
+                'name' => 'Admin MS Repair',
+                'password' => Hash::make('msrepair2024'),
+            ]
+        );
 
-        // Clear existing Price List data to prevent duplicates when re-seeding
-        PriceList::truncate();
+        // Price list truncation removed to preserve data
 
         // Comprehensive iPhone Price List Data
         $services = [
@@ -66,7 +67,13 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($services as $service) {
-            PriceList::create($service);
+            PriceList::firstOrCreate(
+                [
+                    'service_name' => $service['service_name'],
+                    'device_model' => $service['device_model']
+                ],
+                $service
+            );
         }
 
         // Sample Portfolio Data
@@ -77,7 +84,10 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($portfolios as $portfolio) {
-            Portfolio::create($portfolio);
+            Portfolio::firstOrCreate(
+                ['title' => $portfolio['title']],
+                $portfolio
+            );
         }
     }
 }
