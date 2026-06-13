@@ -58,15 +58,17 @@
                     </div>
 
                     {{-- Floating badge — Garansi Resmi --}}
-                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-bottom-8 lg:-left-12 bg-white/90 backdrop-blur-xl rounded-2xl p-4 sm:p-5 ambient-shadow flex items-center gap-4 animate-fade-in-up animate-delay-500 border border-white/40 whitespace-nowrap z-20">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/30">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 1l2.928 5.856L19 7.82l-4.5 4.353L15.572 19 10 16.144 4.428 19l1.072-6.827L1 7.82l6.072-.964L10 1z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="font-extrabold text-on-surface text-base sm:text-lg">Bergaransi Resmi</p>
-                            <p class="text-on-surface-variant text-sm font-medium">Hingga 90 Hari</p>
+                    <div class="absolute -bottom-6 left-0 right-0 flex justify-center lg:-left-12 lg:right-auto lg:justify-start lg:-bottom-8 z-20">
+                        <div class="bg-white/90 backdrop-blur-xl rounded-2xl p-4 sm:p-5 ambient-shadow flex items-center gap-4 animate-fade-in-up animate-delay-500 border border-white/40 whitespace-nowrap">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/30">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 1l2.928 5.856L19 7.82l-4.5 4.353L15.572 19 10 16.144 4.428 19l1.072-6.827L1 7.82l6.072-.964L10 1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-extrabold text-on-surface text-base sm:text-lg">Bergaransi Resmi</p>
+                                <p class="text-on-surface-variant text-sm font-medium">Hingga 90 Hari</p>
+                            </div>
                         </div>
                     </div>
                 </div>
