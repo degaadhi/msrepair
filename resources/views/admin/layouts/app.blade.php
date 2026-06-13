@@ -181,6 +181,9 @@
 </head>
 <body class="bg-background text-on-background flex h-screen overflow-hidden">
 
+    {{-- Sidebar Mobile Backdrop --}}
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+
     {{-- Admin Sidebar Component --}}
     @include('admin.partials.sidebar')
 
@@ -191,7 +194,7 @@
         @include('admin.partials.topbar')
 
         {{-- Canvas Content --}}
-        <div class="p-6 lg:p-8 max-w-7xl mx-auto w-full space-y-8 flex-1">
+        <div class="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto w-full space-y-8 flex-1">
             @yield('content')
         </div>
         
@@ -200,5 +203,40 @@
 
     </main>
 
+    <!-- Sidebar Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('admin-sidebar');
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            const closeBtn = document.getElementById('sidebar-close');
+
+            function toggleSidebar() {
+                if (!sidebar || !backdrop) return;
+                
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                
+                if (isHidden) {
+                    // Open sidebar
+                    sidebar.classList.remove('-translate-x-full');
+                    backdrop.classList.remove('hidden');
+                    setTimeout(() => {
+                        backdrop.classList.remove('opacity-0');
+                    }, 20);
+                } else {
+                    // Close sidebar
+                    sidebar.classList.add('-translate-x-full');
+                    backdrop.classList.add('opacity-0');
+                    setTimeout(() => {
+                        backdrop.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+            if (backdrop) backdrop.addEventListener('click', toggleSidebar);
+            if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+        });
+    </script>
 </body>
 </html>

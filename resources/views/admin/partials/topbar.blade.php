@@ -1,5 +1,11 @@
-<header class="sticky top-0 z-40 w-full bg-surface flex justify-between items-center px-8 py-3 border-b border-outline-variant/15 flex-shrink-0 shadow-sm">
-    <h2 class="text-lg text-on-surface font-headline font-bold">@yield('topbar_title', 'Dashboard Overview')</h2>
+<header class="sticky top-0 z-40 w-full bg-surface flex justify-between items-center px-4 md:px-8 py-3 border-b border-outline-variant/15 flex-shrink-0 shadow-sm">
+    <div class="flex items-center gap-3">
+        <!-- Sidebar Toggle Button (Mobile Only) -->
+        <button id="sidebar-toggle" class="lg:hidden text-on-surface hover:text-primary focus:outline-none flex items-center justify-center p-1.5 rounded-md hover:bg-surface-container-high transition-colors" title="Open Sidebar">
+            <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+        <h2 class="text-lg text-on-surface font-headline font-bold">@yield('topbar_title', 'Dashboard Overview')</h2>
+    </div>
     
     <div class="flex items-center gap-6">
         <!-- Search Bar -->

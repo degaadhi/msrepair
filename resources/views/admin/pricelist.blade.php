@@ -13,7 +13,7 @@
 @endif
 
 <!-- Header Section -->
-<div class="flex justify-between items-end mb-10 animate-fade-in-up">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 animate-fade-in-up">
     <div>
         <h2 class="text-3xl lg:text-4xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Price List Management</h2>
         <p class="text-on-surface-variant font-body text-sm lg:text-base">Define and manage repair service costs for all hardware models.</p>
@@ -55,31 +55,31 @@
         <table class="w-full text-left border-collapse">
             <thead>
                 <tr class="bg-surface-container-lowest border-b border-outline-variant/10">
-                    <th class="px-8 py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Service Name</th>
-                    <th class="px-8 py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Category</th>
-                    <th class="px-8 py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Base Price</th>
-                    <th class="px-8 py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Description</th>
-                    <th class="px-8 py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant text-right">Actions</th>
+                    <th class="px-4 md:px-8 py-4 md:py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Service Name</th>
+                    <th class="px-4 md:px-8 py-4 md:py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Category</th>
+                    <th class="px-4 md:px-8 py-4 md:py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Base Price</th>
+                    <th class="px-4 md:px-8 py-4 md:py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Description</th>
+                    <th class="px-4 md:px-8 py-4 md:py-5 text-[11px] uppercase tracking-widest font-bold text-on-surface-variant text-right">Actions</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-outline-variant/10">
                 @forelse ($services as $service)
                 <tr class="{{ $loop->even ? 'bg-surface' : 'bg-surface-container-lowest' }} hover:bg-surface-container-low/50 transition-colors group">
-                    <td class="px-8 py-6">
+                    <td class="px-4 md:px-8 py-4 md:py-6">
                         <p class="font-semibold text-on-surface">{{ $service->service_name }}</p>
                         @if($service->device_model)
                         <p class="text-xs text-on-surface-variant mt-1">{{ $service->device_model }}</p>
                         @endif
                     </td>
-                    <td class="px-8 py-6">
+                    <td class="px-4 md:px-8 py-4 md:py-6">
                         <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1.5 rounded-md uppercase tracking-wider">{{ $service->category }}</span>
                     </td>
-                    <td class="px-8 py-6 font-mono font-bold text-primary">Rp {{ number_format($service->price, 0, ',', '.') }}</td>
-                    <td class="px-8 py-6 text-sm text-on-surface-variant max-w-[200px] truncate">
+                    <td class="px-4 md:px-8 py-4 md:py-6 font-mono font-bold text-primary">Rp {{ number_format($service->price, 0, ',', '.') }}</td>
+                    <td class="px-4 md:px-8 py-4 md:py-6 text-sm text-on-surface-variant max-w-[200px] truncate">
                         {{ $service->description ?? '-' }}
                     </td>
-                    <td class="px-8 py-6 text-right">
-                        <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <td class="px-4 md:px-8 py-4 md:py-6 text-right">
+                        <div class="flex justify-end gap-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                             <a href="/admin/pricelist/{{ $service->id }}/edit" class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all" title="Edit">
                                 <span class="material-symbols-outlined text-[20px]">edit</span>
                             </a>

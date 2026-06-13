@@ -6,7 +6,7 @@
 @section('content')
 <div class="max-w-4xl mx-auto animate-fade-in-up">
     <!-- Header Section -->
-    <div class="flex justify-between items-end mb-10">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
             <nav class="flex items-center gap-2 text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-2">
                 <a href="/admin/portfolio" class="hover:text-primary transition-colors">Portfolios</a>
@@ -29,15 +29,15 @@
     @endif
 
     <!-- Form Card -->
-    <div class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 border border-outline-variant/10 shadow-sm">
+    <div class="bg-surface-container-lowest rounded-xl p-5 md:p-8 lg:p-10 border border-outline-variant/10 shadow-sm">
         <form action="/admin/portfolio" method="POST" enctype="multipart/form-data" class="space-y-10">
             @csrf
             
-            <!-- Image Upload Dropzone -->
+            <!-- Image Dropzone -->
             <div class="space-y-3">
                 <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant">Repair Documentation</label>
                 <div class="relative group">
-                    <div class="w-full aspect-[21/9] rounded-xl border-2 border-dashed border-outline-variant/30 bg-surface-container-low flex flex-col items-center justify-center gap-4 transition-all group-hover:border-primary/50 group-hover:bg-surface-container-high cursor-pointer" id="dropzone">
+                    <div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-xl border-2 border-dashed border-outline-variant/30 bg-surface-container-low flex flex-col items-center justify-center gap-4 transition-all group-hover:border-primary/50 group-hover:bg-surface-container-high cursor-pointer" id="dropzone">
                         <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
                         </div>

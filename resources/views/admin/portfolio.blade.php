@@ -18,12 +18,12 @@
         <h2 class="text-3xl lg:text-4xl font-extrabold font-headline tracking-tight text-on-surface">Portfolio Management</h2>
         <p class="text-on-surface-variant text-base max-w-2xl font-body">Curate the visual excellence of Precision Tech repairs. Manage high-resolution documentation for client transparency and marketing.</p>
     </div>
-    <div class="flex gap-3 flex-shrink-0">
-        <div class="bg-surface-container-lowest border border-outline-variant/10 px-5 py-3 rounded-xl flex items-center gap-3 shadow-sm">
+    <div class="grid grid-cols-2 gap-3 w-full sm:w-auto sm:flex sm:items-center flex-shrink-0">
+        <div class="bg-surface-container-lowest border border-outline-variant/10 px-5 py-3 rounded-xl flex items-center justify-center sm:justify-start gap-3 shadow-sm">
             <span class="text-primary font-extrabold font-headline text-xl">{{ $totalItems }}</span>
             <span class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Total Items</span>
         </div>
-        <a href="/admin/portfolio/create" class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+        <a href="/admin/portfolio/create" class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
             <span class="material-symbols-outlined text-[20px]">add</span>
             Upload New
         </a>

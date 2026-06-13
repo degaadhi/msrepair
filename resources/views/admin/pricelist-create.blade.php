@@ -6,7 +6,7 @@
 @section('content')
 <div class="max-w-4xl mx-auto animate-fade-in-up">
     <!-- Header Section -->
-    <div class="flex items-end justify-between mb-10">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div class="space-y-1">
             <nav class="flex items-center gap-2 text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-2">
                 <a href="/admin/pricelist" class="hover:text-primary transition-colors">Price Lists</a>
@@ -23,7 +23,7 @@
 
     <!-- Form Card -->
     <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
-        <div class="p-8 border-b border-surface-container-low bg-surface-container-low/30">
+        <div class="p-5 md:p-8 border-b border-surface-container-low bg-surface-container-low/30">
             <div class="flex items-center gap-3">
                 <span class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
                     <span class="material-symbols-outlined text-on-primary-container text-sm">edit_note</span>
@@ -31,7 +31,7 @@
                 <h3 class="text-lg font-bold font-headline text-on-surface">Informasi Layanan</h3>
             </div>
         </div>
-        <form action="/admin/pricelist" method="POST" class="p-8 space-y-8">
+        <form action="/admin/pricelist" method="POST" class="p-5 md:p-8 space-y-8">
             @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Left Column -->
